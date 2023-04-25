@@ -1,8 +1,10 @@
 import React from "react";
 import { Row, Form } from "react-bootstrap";
+import {useNavigate} from 'react-router-dom';
 import "./LoginPage.css";
 
 export default function LoginPage() {
+    const navigate = useNavigate();
     return (
         <>
             <div className="backgroundColorPage">
@@ -36,19 +38,14 @@ export default function LoginPage() {
 
                             </div>
 
-                            {/* Login Button */}
-                            <div>
-
-                            </div>
-
-                            {/* SignUp button */}
+                            {/* Login button */}
                             <div className="mt-5 my-1 d-flex justify-content-center">
-                                <button className="loginBtn"><u>Login</u></button>
+                                <button className="loginBtn" onClick={() => navigate('/HomePage')}><u>Login</u></button>
                             </div>
 
                             {/* Create Account Button */}
                             <div className="my-5 d-flex justify-content-end">
-                                <button className="createAccountBtn"><u>Create Account?</u></button>
+                                <button className="createAccountBtn" onClick={() => navigate('/SignUpPage')}><u>Create Account?</u></button>
                             </div>
                         </Row>
                     </div>
