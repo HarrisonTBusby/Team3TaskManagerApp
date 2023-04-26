@@ -1,6 +1,6 @@
 import React from "react";
 import { Row, Col, Button} from "react-bootstrap";
-import './HomePage.css';
+import './SignUpPage.css';
 
 
 export default function SignUpPage() {
