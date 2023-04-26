@@ -10,9 +10,9 @@ export default function CardComponent() {
       <Card.Body>
         <Card.Title className='d-flex justify-content-center' style={{backgroundColor: 'green'}}>Task Title</Card.Title>
         <div>
-        <p className="">Card Subtitle</p>
+        <p className="">Due: date   Priority:</p>
         </div>
-        <Card.Text>
+        <Card.Text style={{backgroundColor: 'green'}}>
           Some quick example text to build on the card title and make up the
           bulk of the card's content.
         </Card.Text>
