@@ -20,7 +20,7 @@ export default function HomePage() {
 
         <Container>
         <Row className="mt-5">
-          <div className='userTaskFontSize'>Placeholder has 1 Task In Progress</div>
+          <div className='userTaskFontSize'>[Placeholder] has 1 Task In Progress</div>
         </Row>
         </Container>
       </div>
