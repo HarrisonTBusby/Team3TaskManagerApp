@@ -26,14 +26,16 @@ export default function LoginPage() {
                                     type="text"
                                     placeholder="Username"
                                     className="inputFont"
+                                    required
                                 />
                             </div>
                             {/* Password Input */}
                             <div className="mt-5 d-flex justify-content-center">
                             <input
-                                    type="text"
+                                    type="password"
                                     placeholder="Password"
                                     className="inputFont"
+                                    required
                                 />
 
                             </div>
