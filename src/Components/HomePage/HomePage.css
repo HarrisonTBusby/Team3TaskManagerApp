@@ -5,6 +5,7 @@
 
 body{
     background-color: #434371;
+    overflow-x: hidden;
 }
 
 .homePageBackground{
@@ -23,11 +24,47 @@ body{
     border: none;
     color: white;
     background-color: transparent;
-    position: absolute;
-    left: 85%;
+    /* position: absolute;
+    left: 85%; */
+}
 
+.taskBox{
+    width: 31%;
+    min-height: 70vh;
+    /* height: 100; */
+    background-color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+    padding: 200px;
+}
+
+.taskContainer{
+    min-width: 100%;
+    margin-top: 6%;
+    font-family: Jomolhari;
+    color: white;
+}
+
+.toDoText{
+    position: absolute;
+    margin-top: -70px;
+    margin-left: 1%;
+    font-size: 48px;
+}
+
+.inProgressText{
+    position: absolute;
+    margin-top: -70px;
+    margin-left: 68%;
+    font-size: 48px;
+}
+
+.completedText{
+    position: absolute;
+    margin-left: 135%;
+    margin-top: -70px;
+    font-size: 48px;
 }
 
 .userTaskFontSize{
-    font-size: 55px;
+    font-size: 50px;
 }

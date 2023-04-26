@@ -1,0 +1,74 @@
+@font-face {
+    font-family: Jomolhari;
+    src: url('../../Assets/Fonts/Jomolhari-Regular.ttf');
+}
+
+body{
+    background-color: #434371;
+}
+
+.homePageBackground{
+    background-image: linear-gradient(#23806D,#434371);
+    background-size: cover;
+    font-family: Jomolhari;
+    color: white;
+}
+
+.headerFontSize{
+    font-size: 80px;
+}
+
+.signOutBtn{
+    font-size: 40px;
+    border: none;
+    color: white;
+    background-color: transparent;
+    position: absolute;
+    left: 85%;
+}
+
+.createTasksBtn{
+    font-size: 40px;
+    border: none;
+    color: white;
+    background-color: transparent;
+    position: absolute;
+    left: 42%;
+}
+
+.userBtn{
+    font-size: 40px;
+    border: none;
+    color: white;
+    background-color: transparent;
+    position: absolute;
+    left: 60%;
+}
+
+.settingsBtn{
+    font-size: 40px;
+    border: none;
+    color: white;
+    background-color: transparent;
+    position: absolute;
+    left: 71%;
+}
+
+.adminTaskBox{
+    width: 31%;
+    min-height: 70vh;
+    /* height: 100; */
+    background-color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+    padding: 200px;
+}
+
+.taskContainer{
+    min-width: 100%;
+    /* margin-left: -5%; */
+}
+
+.userTaskFontSize{
+    font-size: 55px;
+}
+
