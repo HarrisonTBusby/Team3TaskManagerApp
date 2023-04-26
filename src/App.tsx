@@ -6,7 +6,7 @@ import SignUpPage from './Components/SignUpPage/SignUpPage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Components/SignUpPage/SignUpPage'
-import SignUpPage from './Components/SignUpPage/SignUpPage';
+
 
 function App() {
   return (
