@@ -6,7 +6,7 @@ import "./LoginPage.css";
 
 export default function LoginPage() {
     const navigate = useNavigate();
-    GetLoginData();
+   
     return (
         <>
             <div className="backgroundColorPage">

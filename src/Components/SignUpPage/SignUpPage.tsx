@@ -7,25 +7,27 @@ import ModalComponent from '../ModalComponent/ModalComponent'
 
 export default function SignUpPage() {
 
-    const [Username, setUsername] = useState(null);
-    const [Password, setPassword] = useState(null);
-    const [confirmPassword, setConfirmPassword] = useState(null);
+    const [Username, setUsername] = useState('');
+    const [Password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
 
     const handleSubmit = () => {
         let userData = {
             Id: 0,
             Username,
-            Password
+            Password,
+            confirmPassword
         }
         console.log(userData);
-        // createUserAccount(userData);
-        navigate('/Login');
+        createUserAccount(userData);
+        navigate('/');
     }
 
 
   const navigate = useNavigate();
   return (
     <>
+
       <div className="backgroundColorPage">
         <Row>
           <div className="d-flex justify-content-center px-0">
