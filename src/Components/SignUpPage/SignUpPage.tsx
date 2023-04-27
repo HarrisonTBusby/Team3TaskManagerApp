@@ -8,6 +8,7 @@ export default function SignUpPage() {
   const navigate = useNavigate();
   return (
     <>
+
       <div className="backgroundColorPage">
         <Row>
           <div className="d-flex justify-content-center px-0">
@@ -56,7 +57,6 @@ export default function SignUpPage() {
               </div>
 
 
-      <ModalComponent></ModalComponent>
             </Row>
           </div>
         </Row>
