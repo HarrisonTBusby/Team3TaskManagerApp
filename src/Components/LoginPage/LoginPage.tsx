@@ -1,4 +1,4 @@
-import React from "react";
+import {useState} from "react";
 import { Row, Form } from "react-bootstrap";
 import {useNavigate} from 'react-router-dom';
 import { GetLoginData } from "../../Services/DataService";
@@ -6,6 +6,27 @@ import "./LoginPage.css";
 
 export default function LoginPage() {
     const navigate = useNavigate();
+
+    const [Username, setUsername] = useState('');
+    const [Password, setPassword] = useState('');
+
+    const handleSubmit = async () => {
+        let userData = {
+            Username,
+            Password
+        }
+        console.log(userData);
+        let token = await GetLoginData(userData);
+        if (token.token != null) {
+            localStorage.setItem('Token', token.token);
+           
+            navigate('/Homepage')
+            
+        }
+
+
+    }
+
    
     return (
         <>
@@ -29,6 +50,7 @@ export default function LoginPage() {
                                     placeholder="Username"
                                     className="inputFont"
                                     required
+                                    onChange={({ target: { value } }: any) => setUsername(value)}
                                 />
                             </div>
                             {/* Password Input */}
@@ -38,13 +60,14 @@ export default function LoginPage() {
                                     placeholder="Password"
                                     className="inputFont"
                                     required
+                                    onChange={({ target: { value } }: any) => setPassword(value)}
                                 />
 
                             </div>
 
                             {/* Login button */}
                             <div className="mt-5 my-1 d-flex justify-content-center">
-                                <button className="loginBtn" onClick={() => navigate('/HomePage')}><u>Login</u></button>
+                                <button className="loginBtn" onClick={handleSubmit}><u>Login</u></button>
                             </div>
 
                             {/* Create Account Button */}
