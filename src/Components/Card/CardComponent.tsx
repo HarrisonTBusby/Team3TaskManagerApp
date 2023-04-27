@@ -5,7 +5,7 @@ import "./CardComponent.css"
 
 export default function CardComponent(props: any) {
 
-  useState
+  
             // <CardComponent
             // title={"Test Title"}
             // date={"test date"}

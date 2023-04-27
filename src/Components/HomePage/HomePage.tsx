@@ -4,11 +4,13 @@ import { Row, Col, Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CardComponent from "../Card/CardComponent";
 import "./HomePage.css";
+import AdminModalComponent from '../ModalComponent/AdminModal/ModalComponent'
 
 export default function HomePage() {
   let navigate = useNavigate();
   return (
     <body>
+      <AdminModalComponent></AdminModalComponent>
       <div className="homePageBackground">
         <Container>
           <Row>

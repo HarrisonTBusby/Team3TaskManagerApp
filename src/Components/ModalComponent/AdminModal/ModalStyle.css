@@ -8,6 +8,7 @@
     position:absolute !important; 
     left:31.5%;
     top: 23%;
+    z-index: 7;
 }
 .title-center{
     align-items: center;
@@ -24,10 +25,21 @@
     margin-left: 5%;
     margin-right: 5%;
     margin-top: 2%;
-    margin-bottom: 2%;
+    margin-bottom: 0%;
     
 }
 .basicInfoLeft{
     
     margin-left: 2%;
+}
+.edit-Button{
+    justify-content: end;
+    display: flex;
+    margin-bottom: 2%;
+    margin-right: 2%;
+    width: 71.62px;
+    height: 38px;
+}
+.clear{
+    color: rgba(0, 0, 0, 0);
 }
