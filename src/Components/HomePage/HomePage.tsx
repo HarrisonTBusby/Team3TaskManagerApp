@@ -35,7 +35,7 @@ export default function HomePage() {
           <div className="toDoText">To Do:</div>
           <div className="taskBox">
             <Row>
-              </Row>
+            </Row>
             <CardComponent/>
           </div>
           <div className="inProgressText">In Progress:</div>
