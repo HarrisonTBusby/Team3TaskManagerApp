@@ -11,9 +11,11 @@ export default function AdminModalComponent() {
 
     <Container className='Max'>
       <Modal.Dialog>
+
         <Modal.Header className='title-cente' closeButton>
           <Modal.Title>Modal title</Modal.Title>
         </Modal.Header>
+
         <Row>
           <Col className='basicInfoLeft '>
             <p>Assigned to: [Admin User]</p>
@@ -26,14 +28,18 @@ export default function AdminModalComponent() {
           </Col>
         </Row>
 
-        {/* <Modal.Body className='assign-center'>
-          <p>Assigned by: [Admin User]</p>
-        </Modal.Body> */}
 <Modal.Header></Modal.Header>
         <Modal.Body className='assign-center'>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ipsum vitae voluptate consectetur eaque, quisquam tenetur ex quod nesciunt aperiam qui voluptatem nulla quibusdam ea at, illum culpa dolorem sunt!</p>
         </Modal.Body>
 
+        <Row>
+          <Col className='edit-Button'>
+            <Button className='btn-danger'>Delete</Button>
+            <p className='clear'>.</p>
+            <Button className='btn-success'>Edit</Button>
+          </Col>
+        </Row>
 
       </Modal.Dialog>
     </Container>
