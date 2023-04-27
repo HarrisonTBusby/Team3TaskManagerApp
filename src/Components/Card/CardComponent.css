@@ -1,0 +1,10 @@
+.cardFont{
+    font-size: 20px;
+    color: black !important;
+    font-family: Jomolhari;
+}
+
+@font-face {
+    font-family: Jomolhari;
+    src: url('../../Assets/Fonts/Jomolhari-Regular.ttf');
+}
