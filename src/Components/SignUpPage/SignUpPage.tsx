@@ -18,7 +18,7 @@ export default function SignUpPage() {
             Password
         }
         console.log(userData);
-        createUserAccount(userData);
+        // createUserAccount(userData);
         navigate('/Login');
     }
 
