@@ -1,12 +1,17 @@
 .cardFont{
     font-size: 20px;
     color: black !important;
-    font-family: Jomolhari;
+    font-family: Prata;
 }
 
 @font-face {
     font-family: Jomolhari;
     src: url('../../Assets/Fonts/Jomolhari-Regular.ttf');
+}
+
+@font-face {
+    font-family: Prata;
+    src: url('../../Assets/Fonts/Prata-Regular.ttf');
 }
 
 .cardStyle{
@@ -36,6 +41,8 @@
 .centered{
     display: flex; 
     justify-content: center;
-
 }
 
+.description{
+    font-size: 15px;
+}

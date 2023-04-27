@@ -19,7 +19,7 @@ export default function CardComponent(props: any) {
 
     <Card className='cardFont cardStyle'>
       <Card.Body style={{padding: '0px'}}>
-        <Card.Title className={props.priority}>{props.title}</Card.Title>
+        <Card.Title className={props.priority} style={{fontSize: '40px'}}>{props.title}</Card.Title>
         <div className='d-flex justify-content-around'>
         <p className="">Due: {props.date}</p>
         <p className="">Priority: {props.priority}</p>
@@ -27,7 +27,7 @@ export default function CardComponent(props: any) {
     <div className='d-flex justify-content-center'>
         <p className="">Assigned By: {props.assigned}</p>
     </div>
-        <Card.Text className='centered'>
+        <Card.Text className='centered description'>
         {props.description}
         </Card.Text>
       </Card.Body>
