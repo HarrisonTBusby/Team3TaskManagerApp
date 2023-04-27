@@ -6,7 +6,7 @@ import "./CardComponent.css"
 export default function CardComponent() {
   return (
     <div className=''>
-    <Card style={{ width: '30vw' }} className='cardFont'>
+    <Card style={{ width: '30vw', marginLeft: "-190px" }} className='cardFont'>
       <Card.Body style={{padding: '0px'}}>
         <Card.Title className='d-flex justify-content-center' style={{backgroundColor: '#23806D'}}>Task Title</Card.Title>
         <div className='d-flex justify-content-around'>

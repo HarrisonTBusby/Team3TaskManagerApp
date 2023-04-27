@@ -1,9 +1,14 @@
-import React from "react";
+import {useState} from "react";
 import { Row, Form } from "react-bootstrap";
 import { useNavigate } from 'react-router-dom';
+import { createUserAccount } from "../../Services/DataService";
 import "./SignUpPage.css";
 
 export default function SignUpPage() {
+
+  
+
+
   const navigate = useNavigate();
   return (
     <>
@@ -26,6 +31,7 @@ export default function SignUpPage() {
                   type="text"
                   placeholder="Username"
                   className="inputFont"
+                  
                 />
               </div>
               {/* Password Input */}
@@ -34,6 +40,7 @@ export default function SignUpPage() {
                   type="text"
                   placeholder="Password"
                   className="inputFont"
+                 
                 />
               </div>
               <div className="mt-5 d-flex justify-content-center">
@@ -41,6 +48,8 @@ export default function SignUpPage() {
                   type="text"
                   placeholder="Confirm Password"
                   className="inputFont"
+
+                  
                 />
               </div>
 
@@ -51,7 +60,7 @@ export default function SignUpPage() {
 
               {/* Create button */}
               <div className="mt-5 my-1 d-flex justify-content-center">
-                <button className="loginBtn" onClick={() => navigate('/HomePage')}><u>Create Account</u></button>
+                <button className="loginBtn" onClick={() => navigate('/Homepage')}><u>Create Account</u></button>
               </div>
 
 
