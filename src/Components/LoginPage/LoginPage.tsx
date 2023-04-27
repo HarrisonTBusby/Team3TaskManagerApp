@@ -1,10 +1,12 @@
 import React from "react";
 import { Row, Form } from "react-bootstrap";
 import {useNavigate} from 'react-router-dom';
+import { GetLoginData } from "../../Services/DataService";
 import "./LoginPage.css";
 
 export default function LoginPage() {
     const navigate = useNavigate();
+   
     return (
         <>
             <div className="backgroundColorPage">

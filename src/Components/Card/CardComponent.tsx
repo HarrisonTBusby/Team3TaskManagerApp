@@ -3,22 +3,31 @@ import { Card, Row } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./CardComponent.css"
 
-export default function CardComponent() {
+export default function CardComponent(props: any) {
+
+            // <CardComponent
+            // title={"Test Title"}
+            // date={"test date"}
+            // priority={"test priority"}
+            // assigned={"test assign"}
+            // description={"test description"}
+            // />
+
   return (
     <div className=''>
-    <Card style={{ width: '30vw' }} className='cardFont'>
+    <Card style={{ width: '30vw', marginLeft: "-195px", marginTop: "10px" }} className='cardFont'>
       <Card.Body style={{padding: '0px'}}>
-        <Card.Title className='d-flex justify-content-center' style={{backgroundColor: '#23806D'}}>Task Title</Card.Title>
+        <Card.Title className='d-flex justify-content-center' style={{backgroundColor: '#23806D'}}>{props.title}</Card.Title>
         <div className='d-flex justify-content-around'>
-        <p className="">Due: date</p>
-        <p className="">Priority: Low</p>
+        <p className="">Due: {props.date}</p>
+        <p className="">Priority: {props.priority}</p>
         </div>
     <div className='d-flex justify-content-center'>
 
-        <p className="">Assigned By: Jacob Dekok</p>
+        <p className="">Assigned By: {props.assigned}</p>
     </div>
         <Card.Text style={{backgroundColor: '#23806D'}}>
-        We are working on a app that is designed to track tasks. These tasks will have: a title, description, due date, the admin who assigned it, and priority of the task. A proto...
+        {props.description}
         </Card.Text>
       </Card.Body>
     </Card>

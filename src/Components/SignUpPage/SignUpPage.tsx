@@ -1,10 +1,29 @@
-import React from "react";
+import {useState} from "react";
 import { Row, Form } from "react-bootstrap";
 import { useNavigate } from 'react-router-dom';
+import { createUserAccount } from "../../Services/DataService";
 import "./SignUpPage.css";
 import ModalComponent from '../ModalComponent/ModalComponent'
 
 export default function SignUpPage() {
+
+    const [Username, setUsername] = useState('');
+    const [Password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+
+    const handleSubmit = () => {
+        let userData = {
+            Id: 0,
+            Username,
+            Password,
+            confirmPassword
+        }
+        console.log(userData);
+        createUserAccount(userData);
+        navigate('/');
+    }
+
+
   const navigate = useNavigate();
   return (
     <>
@@ -28,6 +47,7 @@ export default function SignUpPage() {
                   type="text"
                   placeholder="Username"
                   className="inputFont"
+                  onChange={({target: {value}}: any) => setUsername(value)}
                 />
               </div>
               {/* Password Input */}
@@ -36,6 +56,7 @@ export default function SignUpPage() {
                   type="text"
                   placeholder="Password"
                   className="inputFont"
+                  onChange={({target: {value}}: any) => setPassword(value)}
                 />
               </div>
               <div className="mt-5 d-flex justify-content-center">
@@ -43,6 +64,8 @@ export default function SignUpPage() {
                   type="text"
                   placeholder="Confirm Password"
                   className="inputFont"
+                  onChange={({target: {value}}: any) => setConfirmPassword(value)}
+                  
                 />
               </div>
 
@@ -53,8 +76,9 @@ export default function SignUpPage() {
 
               {/* Create button */}
               <div className="mt-5 my-1 d-flex justify-content-center">
-                <button className="loginBtn" onClick={() => navigate('/HomePage')}><u>Create Account</u></button>
+                <button className="loginBtn" onClick={handleSubmit}><u>Create Account</u></button>
               </div>
+
 
 
             </Row>
