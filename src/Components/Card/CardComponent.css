@@ -8,3 +8,34 @@
     font-family: Jomolhari;
     src: url('../../Assets/Fonts/Jomolhari-Regular.ttf');
 }
+
+.cardStyle{
+    width: 30vw; 
+    margin-left: -195px; 
+    margin-top: 10px;
+}
+
+.Low{
+    background-color: #23806D;
+    display: flex; 
+    justify-content: center;
+}
+
+.Medium{
+    background-color: #FFC759;
+    display: flex; 
+    justify-content: center;
+}
+
+.High{
+    background-color: #E85F5C;
+    display: flex; 
+    justify-content: center;
+}
+
+.centered{
+    display: flex; 
+    justify-content: center;
+
+}
+
