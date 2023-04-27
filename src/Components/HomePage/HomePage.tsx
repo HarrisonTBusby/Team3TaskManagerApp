@@ -6,6 +6,7 @@ import CardComponent from "../Card/CardComponent";
 import "./HomePage.css";
 
 export default function HomePage() {
+
   let navigate = useNavigate();
   return (
     <body>
@@ -43,7 +44,6 @@ export default function HomePage() {
             assigned={"test assign"}
             description={"We are working on a app that is designed to track tasks. These tasks will have: a title, description, due date, the admin who assigned it, and priority of the task. A proto..."}
             />
-            <CardComponent/>
             </Row>
           </div>
           <div className="inProgressText">In Progress:</div>
