@@ -1,0 +1,33 @@
+.Max{ 
+    max-width:500px !important;
+    max-height: 416px !important;
+    /* background-color:rgba(217, 217, 217, 1); */
+    color: black;
+    padding: 0%;
+    margin: 0%;
+    position:absolute !important; 
+    left:31.5%;
+    top: 23%;
+}
+.title-center{
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(217, 217, 217, 1) !important;
+}
+.basicInfo{
+    display: grid;
+    justify-content: center;
+    margin-left: 0%;
+}
+.assign-center{
+    display: flex;justify-content: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    
+}
+.basicInfoLeft{
+    
+    margin-left: 2%;
+}

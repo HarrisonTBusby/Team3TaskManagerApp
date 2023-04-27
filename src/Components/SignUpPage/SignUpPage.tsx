@@ -3,7 +3,6 @@ import { Row, Form } from "react-bootstrap";
 import { useNavigate } from 'react-router-dom';
 import { createUserAccount } from "../../Services/DataService";
 import "./SignUpPage.css";
-import ModalComponent from '../ModalComponent/ModalComponent'
 
 export default function SignUpPage() {
 
