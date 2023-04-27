@@ -44,6 +44,12 @@ body{
     color: white;
 }
 
+.taskRow{
+    margin-top: -205px;
+    display: flex;
+    flex-direction: column;
+}
+
 .toDoText{
     position: absolute;
     margin-top: -70px;
