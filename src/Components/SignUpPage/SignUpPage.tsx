@@ -7,7 +7,20 @@ import ModalComponent from '../ModalComponent/ModalComponent'
 
 export default function SignUpPage() {
 
-  
+    const [Username, setUsername] = useState(null);
+    const [Password, setPassword] = useState(null);
+    const [confirmPassword, setConfirmPassword] = useState(null);
+
+    const handleSubmit = () => {
+        let userData = {
+            Id: 0,
+            Username,
+            Password
+        }
+        console.log(userData);
+        createUserAccount(userData);
+        navigate('/Login');
+    }
 
 
   const navigate = useNavigate();
@@ -32,7 +45,7 @@ export default function SignUpPage() {
                   type="text"
                   placeholder="Username"
                   className="inputFont"
-                  
+                  onChange={({target: {value}}: any) => setUsername(value)}
                 />
               </div>
               {/* Password Input */}
@@ -41,7 +54,7 @@ export default function SignUpPage() {
                   type="text"
                   placeholder="Password"
                   className="inputFont"
-                 
+                  onChange={({target: {value}}: any) => setPassword(value)}
                 />
               </div>
               <div className="mt-5 d-flex justify-content-center">
@@ -49,7 +62,7 @@ export default function SignUpPage() {
                   type="text"
                   placeholder="Confirm Password"
                   className="inputFont"
-
+                  onChange={({target: {value}}: any) => setConfirmPassword(value)}
                   
                 />
               </div>
@@ -61,11 +74,11 @@ export default function SignUpPage() {
 
               {/* Create button */}
               <div className="mt-5 my-1 d-flex justify-content-center">
-                <button className="loginBtn" onClick={() => navigate('/Homepage')}><u>Create Account</u></button>
+                <button className="loginBtn" onClick={handleSubmit}><u>Create Account</u></button>
               </div>
 
 
-      <ModalComponent></ModalComponent>
+
             </Row>
           </div>
         </Row>

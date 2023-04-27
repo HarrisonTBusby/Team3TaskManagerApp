@@ -34,9 +34,9 @@ export default function HomePage() {
         <Row className="d-flex justify-content-around">
           <div className="toDoText">To Do:</div>
           <div className="taskBox">
-            <Row>
-            </Row>
+            <Row className="d-flex flex-direction-column">
             <CardComponent/>
+            </Row>
           </div>
           <div className="inProgressText">In Progress:</div>
           <div className="taskBox"></div>
