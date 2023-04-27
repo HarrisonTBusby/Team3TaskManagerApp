@@ -3,6 +3,7 @@ import { Row, Form } from "react-bootstrap";
 import { useNavigate } from 'react-router-dom';
 import { createUserAccount } from "../../Services/DataService";
 import "./SignUpPage.css";
+import ModalComponent from '../ModalComponent/ModalComponent'
 
 export default function SignUpPage() {
 
@@ -64,7 +65,7 @@ export default function SignUpPage() {
               </div>
 
 
-
+      <ModalComponent></ModalComponent>
             </Row>
           </div>
         </Row>
