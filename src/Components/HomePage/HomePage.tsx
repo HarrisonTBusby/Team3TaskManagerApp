@@ -35,11 +35,21 @@ export default function HomePage() {
           <div className="toDoText">To Do:</div>
           <div className="taskBox">
             <Row className="d-flex flex-direction-column">
+            <CardComponent
+            title={"Test Title"}
+            date={"test date"}
+            priority={"test priority"}
+            assigned={"test assign"}
+            description={"test description"}
+            />
             <CardComponent/>
             </Row>
           </div>
           <div className="inProgressText">In Progress:</div>
-          <div className="taskBox"></div>
+          <div className="taskBox">
+            <CardComponent/>
+
+          </div>
           <div className="completedText">Complete:</div>
           <div className="taskBox"></div>
         </Row>
