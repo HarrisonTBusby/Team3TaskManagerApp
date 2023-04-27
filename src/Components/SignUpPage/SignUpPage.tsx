@@ -8,19 +8,32 @@ import ModalComponent from '../ModalComponent/ModalComponent'
 export default function SignUpPage() {
 
     const [Username, setUsername] = useState('');
+    const [Admin, setAdmin] = useState(false);
     const [Password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
 
     const handleSubmit = () => {
         let userData = {
             Id: 0,
+            Admin,
             Username,
             Password,
             confirmPassword
+
         }
-        console.log(userData);
-        createUserAccount(userData);
-        navigate('/');
+        if(Password !== confirmPassword){
+          
+          const message = 'Please match passwords.'
+          alert(message);
+        }else{
+          console.log(userData);
+          createUserAccount(userData);
+          navigate('/');
+        }
+
+        
+
+
     }
 
 
@@ -47,29 +60,31 @@ export default function SignUpPage() {
                   placeholder="Username"
                   className="inputFont"
                   onChange={({target: {value}}: any) => setUsername(value)}
+                  required
                 />
               </div>
               {/* Password Input */}
               <div className="mt-5 d-flex justify-content-center">
                 <input
-                  type="text"
+                  type="password"
                   placeholder="Password"
                   className="inputFont"
                   onChange={({target: {value}}: any) => setPassword(value)}
+                  required
                 />
               </div>
               <div className="mt-5 d-flex justify-content-center">
                 <input
-                  type="text"
+                  type="password"
                   placeholder="Confirm Password"
                   className="inputFont"
                   onChange={({target: {value}}: any) => setConfirmPassword(value)}
-                  
+                  required
                 />
               </div>
 
               <div className="mt-5 d-flex justify-content-center">
-                <input className="form-check-input right-marg" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."/>
+                <input className="form-check-input right-marg" type="checkbox" id="checkboxNoLabel" value="" aria-label="..." onClick={() => setAdmin(true)}/>
                 <p className="">Admin Account</p>
               </div>
 
@@ -86,4 +101,5 @@ export default function SignUpPage() {
       </div>
     </>
   );
-}
+  
+  }
