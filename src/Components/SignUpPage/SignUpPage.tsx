@@ -3,7 +3,6 @@ import { Row, Form } from "react-bootstrap";
 import { useNavigate } from 'react-router-dom';
 import { createUserAccount } from "../../Services/DataService";
 import "./SignUpPage.css";
-import ModalComponent from '../ModalComponent/ModalComponent'
 
 export default function SignUpPage() {
 
@@ -40,6 +39,7 @@ export default function SignUpPage() {
   const navigate = useNavigate();
   return (
     <>
+
       <div className="backgroundColorPage">
         <Row>
           <div className="d-flex justify-content-center px-0">

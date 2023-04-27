@@ -34,24 +34,33 @@ export default function HomePage() {
         <Row className="d-flex justify-content-around">
           <div className="toDoText">To Do:</div>
           <div className="taskBox">
-            <Row className="d-flex flex-direction-column">
+            <Row className="taskRow">
+{/* Insert To Do Task Cards Here \/ \/ \/ \/ */}
             <CardComponent
             title={"Test Title"}
             date={"test date"}
-            priority={"test priority"}
+            priority={"Medium"}
             assigned={"test assign"}
-            description={"test description"}
+            description={"We are working on a app that is designed to track tasks. These tasks will have: a title, description, due date, the admin who assigned it, and priority of the task. A proto..."}
             />
             <CardComponent/>
             </Row>
           </div>
           <div className="inProgressText">In Progress:</div>
           <div className="taskBox">
+          <Row className="taskRow">
+{/* Insert In Progress Task Cards Here \/ \/ \/ \/ */}
             <CardComponent/>
+          </Row>
 
           </div>
           <div className="completedText">Complete:</div>
-          <div className="taskBox"></div>
+          <div className="taskBox">
+          <Row className="taskRow">
+{/* Insert Completed Task Cards Here \/ \/ \/ \/ */}
+
+          </Row>
+          </div>
         </Row>
       </Container>
     </body>
