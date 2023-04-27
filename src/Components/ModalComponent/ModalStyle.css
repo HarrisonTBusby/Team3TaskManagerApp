@@ -1,0 +1,24 @@
+.Max{ 
+    max-width:412px !important;
+    max-height: 221px !important;
+    background-color:bisque;
+    color: black;
+    padding: 0%;
+    margin: 0%;
+}
+.title-center{
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(35, 128, 109, 1) !important;
+}
+.basicInfo{
+    display: flex;justify-content: center;
+    margin-left: 0%;
+}
+.assign-center{
+    display: flex;justify-content: center;
+}
+.basicInfoLeft{
+    
+    margin-left: 2%;
+}

@@ -2,6 +2,7 @@ import React from "react";
 import { Row, Form } from "react-bootstrap";
 import { useNavigate } from 'react-router-dom';
 import "./SignUpPage.css";
+import ModalComponent from '../ModalComponent/ModalComponent'
 
 export default function SignUpPage() {
   const navigate = useNavigate();
@@ -55,7 +56,7 @@ export default function SignUpPage() {
               </div>
 
 
-
+      <ModalComponent></ModalComponent>
             </Row>
           </div>
         </Row>
