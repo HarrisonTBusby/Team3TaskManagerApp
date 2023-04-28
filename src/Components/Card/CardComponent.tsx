@@ -5,6 +5,10 @@ import "./CardComponent.css"
 
 export default function CardComponent(props: any) {
 
+  function handleClick() {
+    console.log('Card clicked!');
+  }
+
   const [color, setColor] = useState('');
             // <CardComponent
             // title={"Test Title"}
@@ -15,7 +19,7 @@ export default function CardComponent(props: any) {
             // />
 
   return (
-    <div className=''>
+    <div onClick={handleClick} draggable='true'>
 
     <Card className='cardFont cardStyle'>
       <Card.Body style={{padding: '0px'}}>
@@ -27,7 +31,7 @@ export default function CardComponent(props: any) {
     <div className='d-flex justify-content-center'>
         <p className="">Assigned By: {props.assigned}</p>
     </div>
-        <Card.Text className='centered description'>
+        <Card.Text className='centered descr'>
         {props.description}
         </Card.Text>
       </Card.Body>
