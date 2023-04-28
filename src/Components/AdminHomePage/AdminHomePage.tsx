@@ -4,12 +4,20 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './AdminHomePage.css';
 import CardComponent from '../Card/CardComponent';
 import CreateTaskModal from '../ModalComponent/CreateTaskModal/CreateTaskComponent';
+import { useNavigate } from 'react-router';
 
 export default function AdminHomePage() {
 
   // function CreateTask() {
   //   setShow(true);
   // }
+
+  const navigate = useNavigate();
+  const [Admin, setAdmin] = useState(false);
+  const [Username, setUsername] = useState('');
+  const [Password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+
 
   const [showCreateTaskModal, setShowCreateTaskModal] = useState(false);
 
@@ -19,6 +27,27 @@ export default function AdminHomePage() {
 
   function TaskModalOpen() {
     setShowCreateTaskModal(true);
+  }
+
+  let userData = {
+    Id: 0,
+    Admin,
+    Username,
+    Password,
+    confirmPassword
+
+}
+
+  let handleSignOut = () => {
+    if(userData !== null){
+      setAdmin(false);
+      setUsername('');
+      setPassword('');
+      setConfirmPassword('');
+      navigate('/');
+      console.log(userData);
+      return userData;
+    }
   }
   
   return (
@@ -43,7 +72,7 @@ export default function AdminHomePage() {
                 </Dropdown.Menu>
               </Dropdown>
             <button className='settingsBtn'><u>Settings</u></button>
-            <button className='signOutBtn'><u>Sign out</u></button>
+            <button className='signOutBtn' onClick={handleSignOut}><u>Sign out</u></button>
 
           </div>
         </Row>
