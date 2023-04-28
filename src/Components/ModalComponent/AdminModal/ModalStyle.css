@@ -20,6 +20,7 @@
     justify-content: center;
     margin-left: 0%;
     margin-bottom: 0%;
+    padding-bottom: 0%;
 }
 .assign-center{
     display: flex;justify-content: center;
@@ -30,9 +31,10 @@
     
 }
 .basicInfoLeft{
-    
+    border-bottom: 1px !important; 
     margin-left: 2%;
     margin-bottom: 0%;
+    border-color: black;
 }
 .edit-Button{
     justify-content: end;
@@ -50,6 +52,7 @@
     padding: 0% !important;
     padding-top: 0% !important;
 }
-modal-header{
-    border-bottom: black !important; 
+
+Modal.Header{
+    border-color: black;
 }
