@@ -16,6 +16,7 @@ export default function LoginPage(props: any) {
         await GetAllUsers();
     }
 
+    console.log(allUserData())
 
     const handleSubmit = async () => {
         let userData = {
@@ -27,7 +28,10 @@ export default function LoginPage(props: any) {
         if (token.token != null) {
             localStorage.setItem('Token', token.token);
             sessionStorage.setItem("UserData", JSON.stringify(await GetUserByUsername(Username)));
-            if (props.Admin === true) {
+            let loginData: { Id?: number, Username?: string, isAdmin?: boolean } = {};
+            loginData = JSON.parse(sessionStorage.UserData);
+            console.log(loginData)
+            if (loginData.isAdmin === true) {
                 navigate('/AdminHomePage')
             } else {
                 navigate('/Homepage')
