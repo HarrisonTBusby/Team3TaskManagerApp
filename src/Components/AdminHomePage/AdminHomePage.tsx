@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Row, Col, Container, Card, Dropdown, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './AdminHomePage.css';
@@ -7,12 +7,23 @@ import CreateTaskModal from '../ModalComponent/CreateTaskModal/CreateTaskCompone
 
 export default function AdminHomePage() {
 
-  function CreateTask() {
+  // function CreateTask() {
+  //   setShow(true);
+  // }
+
+  const [showCreateTaskModal, setShowCreateTaskModal] = useState(false);
+
+  function TaskModalClose() {
+    setShowCreateTaskModal(false);
+  }
+
+  function TaskModalOpen() {
+    setShowCreateTaskModal(true);
   }
   
   return (
     <body>
-      <CreateTaskModal/>
+      <CreateTaskModal show={showCreateTaskModal} onClose={TaskModalClose} />
       <div className='homePageBackground'>
 
         <Container>
@@ -20,7 +31,7 @@ export default function AdminHomePage() {
 
             <div style={{ display: 'flex', alignItems: 'center' }}>
               <div className='headerFontSize'>Task Master</div>
-              <button className='createTasksBtn' onClick={CreateTask}><u>Create Tasks</u></button>
+              <button className='createTasksBtn' onClick={TaskModalOpen}><u>Create Tasks</u></button>
               <Dropdown className='userBtn'>
                 <Dropdown.Toggle style={{backgroundColor: 'transparent', border:'none', fontSize:'40px'}} id="dropdown-basic">
                   <u>Users</u>
