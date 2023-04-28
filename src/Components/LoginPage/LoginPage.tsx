@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { Row, Form } from "react-bootstrap";
 import { useNavigate } from 'react-router-dom';
-import { GetLoginData, GetUserByUsername } from "../../Services/DataService";
+
+import { GetLoginData, GetUserByUsername, GetAllUsers } from "../../Services/DataService";
+
 import "./LoginPage.css";
 
 export default function LoginPage(props: any) {
@@ -9,6 +11,10 @@ export default function LoginPage(props: any) {
 
     const [Username, setUsername] = useState('');
     const [Password, setPassword] = useState('');
+
+    const allUserData = async() => {
+        await GetAllUsers();
+    }
 
 
     const handleSubmit = async () => {

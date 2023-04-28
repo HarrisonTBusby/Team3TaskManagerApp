@@ -6,15 +6,17 @@ import { useState } from 'react';
 export default function CreateTaskModal(props: any) {
 
   const [priority, setPriority] = useState('');
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
+  const [dueDate, setDueDate] = useState('');
+  const [status, setStatus] = useState('toDo');
+  const [assignedBy, setAssignedBy] = useState('');
+  const [assignedTo, setAssignedTo] = useState('');
   const [priorityButton, setPriorityButton] = useState('');
   const [show, setShow] = useState(true);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
-  function firstRun() {
-    highPriority();
-  }
 
   function highPriority() {
     setPriority("High");
@@ -25,6 +27,14 @@ export default function CreateTaskModal(props: any) {
   function lowPriority() {
     setPriority("Low");
   }
+
+  const handleTitle = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setTitle(event.target.value);
+  };
+
+  const handleDescription = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setDescription(event.target.value);
+  };
 
   return (
     <div
@@ -38,13 +48,13 @@ export default function CreateTaskModal(props: any) {
             <Modal.Header className='title-cente' closeButton>
               <Row>
                 <Col><Modal.Title>Task Name</Modal.Title></Col>
-                <Col><input type='text' className='nameInput'></input></Col>
+                <Col><input type='text' className='nameInput' value={title} onChange={handleTitle}></input></Col>
               </Row>
             </Modal.Header>
 
             <Row className='basicInfoLeft'>
               <Col xs={4}><h4>Due Date:</h4></Col>
-              <Col><input type='date' className='dateInput'></input></Col>
+              <Col><input type='date' className='dateInput' value={dueDate} onChange={(e) => setDueDate(e.target.value)}></input></Col>
               <Col><h4>Priority:</h4></Col>
               <Col><Dropdown className='priorityButton'>
                 <Dropdown.Toggle variant="danger" id="dropdown-basic">{priority}</Dropdown.Toggle>
@@ -79,7 +89,7 @@ export default function CreateTaskModal(props: any) {
               <Form>
                 <Form.Group controlId="exampleForm.ControlTextarea1">
                   <Form.Label>Task Description</Form.Label>
-                  <Form.Control as="textarea" rows={3} className='descriptionInput' />
+                  <Form.Control as="textarea" rows={3} className='descriptionInput' value={description} onChange={handleDescription} />
                 </Form.Group>
               </Form>
             </Modal.Body>
