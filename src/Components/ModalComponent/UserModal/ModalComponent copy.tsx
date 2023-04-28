@@ -1,14 +1,22 @@
 import React from 'react'
 import { Row, Col, Modal, Button, Container } from 'react-bootstrap';
+import { useState } from 'react';
 import './ModalStyle.css'
 
-export default function ModalComponent() {
+export default function ModalComponent(props: any) {
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     <div
       className="modal show"
       style={{ display: 'block', position: 'initial' }}
     >
 
+    <Modal show={props.show} onHide={props.onClose}>
     <Container className='Max'>
       <Modal.Dialog>
         
@@ -36,6 +44,7 @@ export default function ModalComponent() {
 
       </Modal.Dialog>
     </Container>
+    </Modal>
     </div>
   )
 }

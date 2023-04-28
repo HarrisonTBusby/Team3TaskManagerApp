@@ -14,7 +14,7 @@ export default function CreateTaskModal(props: any) {
   const [assignedBy, setAssignedBy] = useState('');
   const [assignedTo, setAssignedTo] = useState('');
   const [priorityButton, setPriorityButton] = useState('');
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -40,6 +40,7 @@ export default function CreateTaskModal(props: any) {
       "isDeleted": false
     }
 
+    console.log(task);
     CreateTask(task);
     /*
     {
