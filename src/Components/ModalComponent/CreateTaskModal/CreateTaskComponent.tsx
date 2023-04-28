@@ -14,20 +14,23 @@ export default function CreateTaskModal(props: any) {
   const [assignedBy, setAssignedBy] = useState('');
   const [assignedTo, setAssignedTo] = useState('');
   const [priorityButton, setPriorityButton] = useState('');
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  let userData: { Id?: number, Username?: string, isAdmin?: boolean } = {};
-  userData = JSON.parse(sessionStorage.UserData);
-
+  
   // userData.Username
-
+  
   function handleSubmit() {
+    
+    let userData: { Id?: number, username?: string, isAdmin?: boolean } = {};
+    userData = JSON.parse(sessionStorage.UserData);
+    console.log(userData);
+    let Assigner = userData.username;
+    console.log(Assigner);
 
-    let Assigner = userData.Username;
-
+    setShow(false);
     let task = {
       'Id': 0,
       'Title': title,
@@ -39,6 +42,8 @@ export default function CreateTaskModal(props: any) {
       "AssignedTo": null,
       "isDeleted": false
     }
+
+    console.log(task);
 
     CreateTask(task);
     /*
