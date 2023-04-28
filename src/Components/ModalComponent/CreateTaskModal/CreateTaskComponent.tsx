@@ -32,7 +32,7 @@ export default function CreateTaskModal(props: any) {
       style={{ display: 'block', position: 'initial' }}
     >
       <Modal show={props.show} onHide={props.onClose}>
-        <Container className='Max'>
+        <Container className='Max taskModal'>
           <Modal.Dialog>
 
             <Modal.Header className='title-cente' closeButton>
