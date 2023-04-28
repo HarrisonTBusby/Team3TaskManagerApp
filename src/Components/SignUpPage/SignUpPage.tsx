@@ -14,12 +14,10 @@ export default function SignUpPage() {
     const handleSubmit = () => {
         let userData = {
             Id: 0,
-            Admin,
+            isAdmin : Admin,
             Username,
             Password,
-            confirmPassword
-
-        }
+          }
         if(Password !== confirmPassword){
           
           const message = 'Please match passwords.'
