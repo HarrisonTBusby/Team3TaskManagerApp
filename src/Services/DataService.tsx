@@ -73,4 +73,4 @@ async function GetAllUsers(){
 
 
 
-export {GetLoginData, createUserAccount, GetUserByUsername}
+export {GetLoginData, createUserAccount, GetUserByUsername, CreateTask, GetAllUsers}
