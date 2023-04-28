@@ -1,4 +1,4 @@
-async function GetLoginData(userData:any){
+async function GetLoginData(userData:object){
     const promise = await fetch('https://taskmasterapi.azurewebsites.net/User/Login/',{
     method: 'POST',
         headers : {
@@ -15,7 +15,7 @@ async function GetLoginData(userData:any){
     return data;
 };
 
-async function createUserAccount(userData: any){
+async function createUserAccount(userData: object){
     const promise = await fetch('https://taskmasterapi.azurewebsites.net/User/AddUser/',{
         method: 'POST',
         headers : {
@@ -32,6 +32,15 @@ async function createUserAccount(userData: any){
     return data;
 }
 
+async function GetUserByUsername(Username:string){
+    const promise = await fetch(`https://taskmasterapi.azurewebsites.net/User/UserByUserName/${Username}`);
+    const data = await promise.json();
+    const adultUserData = data;
+    console.log(data);
+    return data;
+
+}
+
 async function GetAdminData(){
     
     
@@ -46,4 +55,4 @@ async function GetAdminData(){
 
 
 
-export {GetLoginData, createUserAccount}
+export {GetLoginData, createUserAccount, GetUserByUsername}
