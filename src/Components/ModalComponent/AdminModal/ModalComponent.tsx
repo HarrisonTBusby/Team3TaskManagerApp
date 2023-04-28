@@ -28,7 +28,11 @@ export default function AdminModalComponent() {
           </Col>
         </Row>
 
-<Modal.Header></Modal.Header>
+      <div className='headerline'>
+        <Modal.Header></Modal.Header>
+      </div>
+
+
         <Modal.Body className='assign-center'>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ipsum vitae voluptate consectetur eaque, quisquam tenetur ex quod nesciunt aperiam qui voluptatem nulla quibusdam ea at, illum culpa dolorem sunt!</p>
         </Modal.Body>
@@ -36,7 +40,7 @@ export default function AdminModalComponent() {
         <Row>
           <Col className='edit-Button'>
             <Button className='btn-danger'>Delete</Button>
-            <p className='clear'>.</p>
+            <p className=''>.</p>
             <Button className='btn-success'>Edit</Button>
           </Col>
         </Row>
