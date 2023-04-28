@@ -1,14 +1,15 @@
-import {useState} from "react";
+import { useState } from "react";
 import { Row, Form } from "react-bootstrap";
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { GetLoginData } from "../../Services/DataService";
 import "./LoginPage.css";
 
-export default function LoginPage() {
+export default function LoginPage(props: any) {
     const navigate = useNavigate();
 
     const [Username, setUsername] = useState('');
     const [Password, setPassword] = useState('');
+
 
     const handleSubmit = async () => {
         let userData = {
@@ -19,15 +20,19 @@ export default function LoginPage() {
         let token = await GetLoginData(userData);
         if (token.token != null) {
             localStorage.setItem('Token', token.token);
-           
-            navigate('/Homepage')
-            
+            if (props.Admin === true) {
+                navigate('/AdminHomePage')
+            } else {
+                navigate('/Homepage')
+            }
+
+
         }
 
 
     }
 
-   
+
     return (
         <>
             <div className="backgroundColorPage">
@@ -55,7 +60,7 @@ export default function LoginPage() {
                             </div>
                             {/* Password Input */}
                             <div className="mt-5 d-flex justify-content-center">
-                            <input
+                                <input
                                     type="password"
                                     placeholder="Password"
                                     className="inputFont"
