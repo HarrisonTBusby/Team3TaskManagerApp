@@ -2,6 +2,7 @@ import React from 'react'
 import { Row, Col, Modal, Button, Container, Dropdown, Form } from 'react-bootstrap';
 import './CreateTaskStyle.css'
 import { useState } from 'react';
+import { CreateTask } from '../../../Services/DataService';
 
 export default function CreateTaskModal(props: any) {
 
@@ -18,6 +19,43 @@ export default function CreateTaskModal(props: any) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  let userData: { Id?: number, Username?: string, isAdmin?: boolean } = {};
+  userData = JSON.parse(sessionStorage.UserData);
+
+  // userData.Username
+
+  function handleSubmit() {
+
+    let Assigner = userData.Username;
+
+    let task = {
+      'Id': 0,
+      'Title': title,
+      'Description': description,
+      "DueDate": dueDate,
+      "Priority": priority,
+      "Status": status,
+      "AssignedBy": Assigner,
+      "AssignedTo": null,
+      "isDeleted": false
+    }
+
+    CreateTask(task);
+    /*
+    {
+    "Id" : 0,
+    "Title" : "Words",
+    "Description" : "This is a post about nothing",
+    "DueDate" : "April 5th, 2063",
+    "Priority" : "High",
+    "Status" : "toDo",
+    "AssignedBy" : "DougyG",
+    "AssignedTo" : "asd",
+    "isDeleted" : false
+}
+    */
+  }
+
   function highPriority() {
     setPriority("High");
   }
@@ -30,6 +68,7 @@ export default function CreateTaskModal(props: any) {
 
   const handleTitle = (event: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(event.target.value);
+    console.log(dueDate);
   };
 
   const handleDescription = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -77,7 +116,7 @@ export default function CreateTaskModal(props: any) {
                   <Dropdown.Item href="#/action-3">User3</Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown></Col>
-              <Col><Button variant="success">Create Task</Button></Col>
+              <Col><Button variant="success" className='createTaskButton' onClick={handleSubmit}>Create Task</Button></Col>
             </Row>
 
             <div className='headerline'>

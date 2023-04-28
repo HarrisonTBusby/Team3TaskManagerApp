@@ -86,6 +86,11 @@
    overflow-wrap: break-word;
 }
 
+.createTaskButton{
+    width: 150px;
+    margin-left: -23px;
+}
+
 modal-header{
     border-bottom: black !important; 
 }

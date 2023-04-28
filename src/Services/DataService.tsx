@@ -40,6 +40,23 @@ async function GetUserByUsername(Username:string){
 
 }
 
+async function CreateTask(task: object){
+        const result = await fetch('https://taskmasterapi.azurewebsites.net/Task/AddTaskItem', {
+            method: "POST",
+            headers: {
+                'Content-Type': "application/json"
+            },
+            body: JSON.stringify(task)
+        });
+        if (!result.ok) {
+            const message = `An Error has Occured ${result.status}`;
+            throw new Error(message);
+        }
+        let data = await result.json();
+        console.log(data);
+        return data;
+    }
+
 async function GetAllUsers(){
     const promise = await fetch("https://taskmasterapi.azurewebsites.net/User/GetAllUsers/");
     const data = await promise.json();
@@ -55,4 +72,5 @@ async function GetAllUsers(){
 
 
 
-export {GetLoginData, createUserAccount, GetUserByUsername, GetAllUsers}
+
+export {GetLoginData, createUserAccount, GetUserByUsername, CreateTask, GetAllUsers}
