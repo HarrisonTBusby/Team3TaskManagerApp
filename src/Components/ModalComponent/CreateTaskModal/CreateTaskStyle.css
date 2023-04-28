@@ -1,0 +1,55 @@
+.Max{ 
+    max-width:500px !important;
+    max-height: 416px !important;
+    /* background-color:rgba(217, 217, 217, 1); */
+    color: black;
+    padding: 0%;
+    margin: 0%;
+    position:absolute !important; 
+    left:31.5%;
+    top: 23%;
+    z-index: 7;
+}
+.title-center{
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(217, 217, 217, 1) !important;
+}
+.basicInfo{
+    display: grid;
+    justify-content: center;
+    margin-left: 0%;
+    margin-bottom: 0%;
+}
+.assign-center{
+    display: flex;justify-content: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 2%;
+    margin-bottom: 0%;
+    
+}
+.basicInfoLeft{
+    
+    margin-left: 2%;
+    margin-bottom: 0%;
+}
+.edit-Button{
+    justify-content: end;
+    display: flex;
+    margin-bottom: 2%;
+    margin-right: 2%;
+    width: 71.62px;
+    height: 38px;
+}
+.clear{
+    color: rgba(0, 0, 0, 0);
+}
+.headerline{
+    margin: 0%;
+    padding: 0% !important;
+    padding-top: 0% !important;
+}
+modal-header{
+    border-bottom: black !important; 
+}
