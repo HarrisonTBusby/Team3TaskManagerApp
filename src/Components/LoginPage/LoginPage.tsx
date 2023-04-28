@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Row, Form } from "react-bootstrap";
 import { useNavigate } from 'react-router-dom';
-import { GetLoginData } from "../../Services/DataService";
+import { GetLoginData, GetAllUsers } from "../../Services/DataService";
 import "./LoginPage.css";
 
 export default function LoginPage(props: any) {
@@ -9,6 +9,10 @@ export default function LoginPage(props: any) {
 
     const [Username, setUsername] = useState('');
     const [Password, setPassword] = useState('');
+
+    const allUserData = async() => {
+        await GetAllUsers();
+    }
 
 
     const handleSubmit = async () => {
@@ -21,7 +25,7 @@ export default function LoginPage(props: any) {
         if (token.token != null) {
             localStorage.setItem('Token', token.token);
             sessionStorage.setItem("UserData", JSON.stringify(userData));
-            if (props.Admin === true) {
+            if (allUserData.isAdmin === true) {
                 navigate('/AdminHomePage')
             } else {
                 navigate('/Homepage')

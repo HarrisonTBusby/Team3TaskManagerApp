@@ -41,9 +41,11 @@ async function GetUserByUsername(Username:string){
 
 }
 
-async function GetAdminData(){
-    
-    
+async function GetAllUsers(){
+    const promise = await fetch("https://taskmasterapi.azurewebsites.net/User/GetAllUsers/");
+    const data = await promise.json();
+    console.log(data);
+    return data;
 }
 
 
@@ -54,5 +56,4 @@ async function GetAdminData(){
 
 
 
-
-export {GetLoginData, createUserAccount, GetUserByUsername}
+export {GetLoginData, createUserAccount, GetUserByUsername, GetAllUsers}
