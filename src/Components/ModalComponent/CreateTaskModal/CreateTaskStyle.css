@@ -29,10 +29,18 @@
     margin-bottom: 0%;
     
 }
+
+.taskModal{
+    position: absolute;
+    left: 0%;
+    /* top: -50%; */
+}
+
 .basicInfoLeft{
     
     margin-left: 2%;
     margin-bottom: 0%;
+    margin-top: 2%;
 }
 .edit-Button{
     justify-content: end;
@@ -50,6 +58,34 @@
     padding: 0% !important;
     padding-top: 0% !important;
 }
+
+.nameInput{
+    width: 280px;
+}
+
+.dateInput{
+    margin-left: -50px;
+}
+
+.priorityButton{
+    margin-left: -20px;
+}
+
+.assignTo{
+    margin-left: 23px;
+}
+
+.userDropdown{
+    margin-left: -135px;
+}
+
+.descriptionInput{
+    width: 100%;
+    min-height: 100px;
+   text-align: left;
+   overflow-wrap: break-word;
+}
+
 modal-header{
     border-bottom: black !important; 
 }

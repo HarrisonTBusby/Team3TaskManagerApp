@@ -1,52 +1,92 @@
 import React from 'react'
-import { Row, Col, Modal, Button, Container } from 'react-bootstrap';
-import './ModalStyle.css'
+import { Row, Col, Modal, Button, Container, Dropdown, Form } from 'react-bootstrap';
+import './CreateTaskStyle.css'
+import { useState } from 'react';
 
-export default function AdminModalComponent() {
+export default function CreateTaskModal(props: any) {
+
+  const [priority, setPriority] = useState('');
+  const [priorityButton, setPriorityButton] = useState('');
+  const [show, setShow] = useState(true);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  function firstRun() {
+    highPriority();
+  }
+
+  function highPriority() {
+    setPriority("High");
+  }
+  function mediumPriority() {
+    setPriority("Medium");
+  }
+  function lowPriority() {
+    setPriority("Low");
+  }
+
   return (
     <div
       className="modal show"
       style={{ display: 'block', position: 'initial' }}
     >
+      <Modal show={props.show} onHide={props.onClose}>
+        <Container className='Max taskModal'>
+          <Modal.Dialog>
 
-    <Container className='Max'>
-      <Modal.Dialog>
+            <Modal.Header className='title-cente' closeButton>
+              <Row>
+                <Col><Modal.Title>Task Name</Modal.Title></Col>
+                <Col><input type='text' className='nameInput'></input></Col>
+              </Row>
+            </Modal.Header>
 
-        <Modal.Header className='title-cente' closeButton>
-          <Modal.Title>Modal title</Modal.Title>
-        </Modal.Header>
+            <Row className='basicInfoLeft'>
+              <Col xs={4}><h4>Due Date:</h4></Col>
+              <Col><input type='date' className='dateInput'></input></Col>
+              <Col><h4>Priority:</h4></Col>
+              <Col><Dropdown className='priorityButton'>
+                <Dropdown.Toggle variant="danger" id="dropdown-basic">{priority}</Dropdown.Toggle>
 
-        <Row>
-          <Col className='basicInfoLeft '>
-            <p>Assigned to: [Admin User]</p>
-            <p>Due: 19/23/28</p>
-          </Col>
+                <Dropdown.Menu>
+                  <Dropdown.Item href="#/action-1" onClick={highPriority}>High</Dropdown.Item>
+                  <Dropdown.Item href="#/action-2" onClick={mediumPriority}>Medium</Dropdown.Item>
+                  <Dropdown.Item href="#/action-3" onClick={lowPriority}>Low</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown></Col>
+            </Row>
+            <Row className='mt-2'>
+              <Col xs={6} className='assignTo'><h4>Assign To: </h4></Col>
+              <Col xs={1}><Dropdown className='userDropdown'>
+                <Dropdown.Toggle variant="info" id="dropdown-basicTwo">Users</Dropdown.Toggle>
 
-          <Col  className='basicInfo '>
-            <p>Assigned by: [Admin User]</p>
-            <p>Priority: medium</p>
-          </Col>
-        </Row>
+                <Dropdown.Menu>
+                  <Dropdown.Item href="#/action-1">User1</Dropdown.Item>
+                  <Dropdown.Item href="#/action-2">User2</Dropdown.Item>
+                  <Dropdown.Item href="#/action-3">User3</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown></Col>
+              <Col><Button variant="success">Create Task</Button></Col>
+            </Row>
 
-      <div className='headerline'>
-        <Modal.Header></Modal.Header>
-      </div>
+            <div className='headerline'>
+              <Modal.Header></Modal.Header>
+            </div>
 
 
-        <Modal.Body className='assign-center'>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ipsum vitae voluptate consectetur eaque, quisquam tenetur ex quod nesciunt aperiam qui voluptatem nulla quibusdam ea at, illum culpa dolorem sunt!</p>
-        </Modal.Body>
+            <Modal.Body className='assign-left'>
+              <Form>
+                <Form.Group controlId="exampleForm.ControlTextarea1">
+                  <Form.Label>Task Description</Form.Label>
+                  <Form.Control as="textarea" rows={3} className='descriptionInput' />
+                </Form.Group>
+              </Form>
+            </Modal.Body>
 
-        <Row>
-          <Col className='edit-Button'>
-            <Button className='btn-danger'>Delete</Button>
-            <p className=''>.</p>
-            <Button className='btn-success'>Edit</Button>
-          </Col>
-        </Row>
-
-      </Modal.Dialog>
-    </Container>
+          </Modal.Dialog>
+        </Container>
+      </Modal>
     </div>
   )
 }
