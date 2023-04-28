@@ -1,36 +1,62 @@
-import React from 'react'
-import { Row, Col, Container, Card } from 'react-bootstrap';
+import React, { useState } from 'react'
+import { Row, Col, Container, Card, Dropdown, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './AdminHomePage.css';
 import CardComponent from '../Card/CardComponent';
+import CreateTaskModal from '../ModalComponent/CreateTaskModal/CreateTaskComponent';
 
 export default function AdminHomePage() {
+
+  // function CreateTask() {
+  //   setShow(true);
+  // }
+
+  const [showCreateTaskModal, setShowCreateTaskModal] = useState(false);
+
+  function TaskModalClose() {
+    setShowCreateTaskModal(false);
+  }
+
+  function TaskModalOpen() {
+    setShowCreateTaskModal(true);
+  }
+  
   return (
     <body>
-    <div className='homePageBackground'>
+      <CreateTaskModal show={showCreateTaskModal} onClose={TaskModalClose} />
+      <div className='homePageBackground'>
 
-      <Container>
-      <Row className='d-flex justify-content-between'>
+        <Container>
+          <Row className='d-flex justify-content-between'>
 
-      <div style={{ display: 'flex', alignItems: 'center' }}>
-        <div className='headerFontSize'>Task Master</div>
-        <button className='createTasksBtn'><u>Create Tasks</u></button>
-        <button className='userBtn'><u>Users</u></button>
-        <button className='settingsBtn'><u>Settings</u></button>
-        <button className='signOutBtn'><u>Sign out</u></button>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <div className='headerFontSize'>Task Master</div>
+              <button className='createTasksBtn' onClick={TaskModalOpen}><u>Create Tasks</u></button>
+              <Dropdown className='userBtn'>
+                <Dropdown.Toggle style={{backgroundColor: 'transparent', border:'none', fontSize:'40px'}} id="dropdown-basic">
+                  <u>Users</u>
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                  <Dropdown.Item>Placeholder</Dropdown.Item>
+                  <Dropdown.Item>Placeholder</Dropdown.Item>
+                  <Dropdown.Item>Placeholder</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            <button className='settingsBtn'><u>Settings</u></button>
+            <button className='signOutBtn'><u>Sign out</u></button>
 
-      </div>
-      </Row>
+          </div>
+        </Row>
       </Container>
 
       <Container>
-      <Row className="mt-5">
-        <div className='userTaskFontSize'>[Placeholder] has 1 Task In Progress</div>
-      </Row>
+        <Row className="mt-5">
+          <div className='userTaskFontSize'>[Placeholder] has 1 Task In Progress</div>
+        </Row>
       </Container>
-      
+
       <Container className='taskContainer'>
-          <Row className='d-flex justify-content-around'>
+        <Row className='d-flex justify-content-around'>
 
           <div className="toDoText">To Do:</div>
           <div className='adminTaskBox'>
@@ -73,6 +99,6 @@ export default function AdminHomePage() {
         </Container>
      
     </div>
-  </body>
+  </body >
   )
 }
