@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Row, Col, Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -8,7 +8,34 @@ import AdminModalComponent from '../ModalComponent/AdminModal/ModalComponent'
 
 export default function HomePage() {
 
+  const [Admin, setAdmin] = useState(false);
+  const [Username, setUsername] = useState('');
+  const [Password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+
   let navigate = useNavigate();
+
+  let userData = {
+    Id: 0,
+    Admin,
+    Username,
+    Password,
+    confirmPassword
+
+}
+
+let handleSignOut = () => {
+  if(userData !== null){
+    setAdmin(false);
+    setUsername('');
+    setPassword('');
+    setConfirmPassword('');
+    navigate('/');
+    console.log(userData);
+    return userData;
+  }
+}
+
   return (
     <body>
       <AdminModalComponent></AdminModalComponent>
@@ -17,7 +44,7 @@ export default function HomePage() {
           <Row>
             <div className="d-flex justify-content-center">
               <div className="headerFontSize">Task Master</div>
-              <button className="signOutBtn" onClick={() => navigate('/')}>
+              <button className="signOutBtn" onClick={handleSignOut}>
                 <u>Sign out</u>
               </button>
             </div>

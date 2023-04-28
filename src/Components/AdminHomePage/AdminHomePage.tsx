@@ -5,6 +5,10 @@ import './AdminHomePage.css';
 import CardComponent from '../Card/CardComponent';
 
 export default function AdminHomePage() {
+
+
+
+
   return (
     <body>
       <div className='homePageBackground'>

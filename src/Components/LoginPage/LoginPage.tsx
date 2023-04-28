@@ -20,6 +20,7 @@ export default function LoginPage(props: any) {
         let token = await GetLoginData(userData);
         if (token.token != null) {
             localStorage.setItem('Token', token.token);
+            sessionStorage.setItem("UserData", JSON.stringify(userData));
             if (props.Admin === true) {
                 navigate('/AdminHomePage')
             } else {
