@@ -4,7 +4,8 @@ import { Row, Col, Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CardComponent from "../Card/CardComponent";
 import "./HomePage.css";
-import AdminModalComponent from '../ModalComponent/AdminModal/ModalComponent'
+import AdminModalComponent from '../ModalComponent/AdminModal/ModalComponent';
+import ModalComponent from "../ModalComponent/UserModal/ModalComponent copy";
 
 export default function HomePage() {
 
@@ -14,6 +15,16 @@ export default function HomePage() {
   const [confirmPassword, setConfirmPassword] = useState('');
 
   let navigate = useNavigate();
+
+  const [showCreateTaskModal, setShowCreateTaskModal] = useState(false);
+
+  function TaskModalClose() {
+    // setShowCreateTaskModal(false);
+  }
+
+  function TaskModalOpen() {
+    setShowCreateTaskModal(true);
+  }
 
   let userData = {
     Id: 0,
@@ -38,7 +49,7 @@ let handleSignOut = () => {
 
   return (
     <body>
-      <AdminModalComponent></AdminModalComponent>
+      <AdminModalComponent show={showCreateTaskModal} onClose={TaskModalClose} ></AdminModalComponent>
       <div className="homePageBackground">
         <Container>
           <Row>
@@ -79,7 +90,6 @@ let handleSignOut = () => {
           <div className="taskBox">
           <Row className="taskRow">
 {/* Insert In Progress Task Cards Here \/ \/ \/ \/ */}
-            <CardComponent/>
           </Row>
 
           </div>

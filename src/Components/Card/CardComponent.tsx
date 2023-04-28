@@ -2,11 +2,12 @@ import React, { useState } from 'react'
 import { Card, Row } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./CardComponent.css"
+import ModalComponent from '../ModalComponent/AdminModal/ModalComponent';
 
 export default function CardComponent(props: any) {
 
   function handleClick() {
-    console.log('Card clicked!');
+    alert("This will open a modal showing the task info");
   }
 
   const [color, setColor] = useState('');
