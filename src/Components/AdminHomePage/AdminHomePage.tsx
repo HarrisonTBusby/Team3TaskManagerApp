@@ -43,15 +43,44 @@ export default function AdminHomePage() {
 
           <div className="toDoText">To Do:</div>
           <div className='adminTaskBox'>
-            <CardComponent />
+          <Row className="taskRow">
+
+          <CardComponent
+            title={"Test Title"}
+            date={"test date"}
+            priority={"Medium"}
+            assigned={"test assign"}
+            description={"We are working on a app that is designed to track tasks. These tasks will have: a title, description, due date, the admin who assigned it, and priority of the task. A proto..."}
+            />
+            </Row>
           </div>
           <div className="inProgressText">In Progress:</div>
-          <div className='adminTaskBox'></div>
+          <div className='adminTaskBox'>
+          <Row className="taskRow">
+          <CardComponent
+            title={"Test Title"}
+            date={"test date"}
+            priority={"High"}
+            assigned={"test assign"}
+            description={"We are working on a app that is designed to track tasks. These tasks will have: a title, description, due date, the admin who assigned it, and priority of the task. A proto..."}
+            />
+          </Row>
+          </div>
           <div className="completedText">Complete:</div>
-          <div className='adminTaskBox'></div>
-        </Row>
-      </Container>
-
+          <div className='adminTaskBox'>
+          <Row className="taskRow">
+          <CardComponent
+            title={"Test Title"}
+            date={"test date"}
+            priority={"Low"}
+            assigned={"test assign"}
+            description={"We are working on a app that is designed to track tasks. These tasks will have: a title, description, due date, the admin who assigned it, and priority of the task. A proto..."}
+            />
+          </Row>
+          </div>
+          </Row>
+        </Container>
+     
     </div>
   </body >
   )
