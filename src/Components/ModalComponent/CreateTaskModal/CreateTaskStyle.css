@@ -33,6 +33,7 @@
     
     margin-left: 2%;
     margin-bottom: 0%;
+    margin-top: 2%;
 }
 .edit-Button{
     justify-content: end;
@@ -50,6 +51,15 @@
     padding: 0% !important;
     padding-top: 0% !important;
 }
+
+.nameInput{
+    width: 280px;
+}
+
+.dateInput{
+    margin-left: -50px;
+}
+
 modal-header{
     border-bottom: black !important; 
 }
