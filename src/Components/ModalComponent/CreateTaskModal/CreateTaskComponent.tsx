@@ -1,19 +1,25 @@
 import React from 'react'
-import { Row, Col, Modal, Button, Container, Dropdown } from 'react-bootstrap';
+import { Row, Col, Modal, Button, Container, Dropdown, Form } from 'react-bootstrap';
 import './CreateTaskStyle.css'
 import { useState } from 'react';
 
 export default function CreateTaskModal() {
 
   const [priority, setPriority] = useState('');
+  const [priorityButton, setPriorityButton] = useState('');
 
-  function highPriority(){
+
+  function firstRun() {
+    highPriority();
+  }
+
+  function highPriority() {
     setPriority("High");
   }
-  function mediumPriority(){
+  function mediumPriority() {
     setPriority("Medium");
   }
-  function lowPriority(){
+  function lowPriority() {
     setPriority("Low");
   }
 
@@ -34,18 +40,31 @@ export default function CreateTaskModal() {
           </Modal.Header>
 
           <Row className='basicInfoLeft'>
-            <Col><h4>Due Date</h4></Col>
+            <Col xs={4}><h4>Due Date:</h4></Col>
             <Col><input type='date' className='dateInput'></input></Col>
-            <Col><h4>Priority</h4></Col>
-            <Col><Dropdown>
+            <Col><h4>Priority:</h4></Col>
+            <Col><Dropdown className='priorityButton'>
               <Dropdown.Toggle variant="danger" id="dropdown-basic">{priority}</Dropdown.Toggle>
 
               <Dropdown.Menu>
-                <Dropdown.Item href="#/action-1">High</Dropdown.Item>
-                <Dropdown.Item href="#/action-2" onClick={highPriority}>Medium</Dropdown.Item>
-                <Dropdown.Item href="#/action-3">Low</Dropdown.Item>
+                <Dropdown.Item href="#/action-1" onClick={highPriority}>High</Dropdown.Item>
+                <Dropdown.Item href="#/action-2" onClick={mediumPriority}>Medium</Dropdown.Item>
+                <Dropdown.Item href="#/action-3" onClick={lowPriority}>Low</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown></Col>
+          </Row>
+          <Row className='mt-2'>
+            <Col xs={6} className='assignTo'><h4>Assign To: </h4></Col>
+            <Col xs={1}><Dropdown className='userDropdown'>
+              <Dropdown.Toggle variant="info" id="dropdown-basicTwo">Users</Dropdown.Toggle>
+
+              <Dropdown.Menu>
+                <Dropdown.Item href="#/action-1">User1</Dropdown.Item>
+                <Dropdown.Item href="#/action-2">User2</Dropdown.Item>
+                <Dropdown.Item href="#/action-3">User3</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown></Col>
+            <Col><Button variant="success">Create Task</Button></Col>
           </Row>
 
           <div className='headerline'>
@@ -53,17 +72,14 @@ export default function CreateTaskModal() {
           </div>
 
 
-          <Modal.Body className='assign-center'>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ipsum vitae voluptate consectetur eaque, quisquam tenetur ex quod nesciunt aperiam qui voluptatem nulla quibusdam ea at, illum culpa dolorem sunt!</p>
+          <Modal.Body className='assign-left'>
+            <Form>
+              <Form.Group controlId="exampleForm.ControlTextarea1">
+                <Form.Label>Task Description</Form.Label>
+                <Form.Control as="textarea" rows={3} className='descriptionInput' />
+              </Form.Group>
+            </Form>
           </Modal.Body>
-
-          <Row>
-            <Col className='edit-Button'>
-              <Button className='btn-danger'>Delete</Button>
-              <p className=''>.</p>
-              <Button className='btn-success'>Edit</Button>
-            </Col>
-          </Row>
 
         </Modal.Dialog>
       </Container>

@@ -60,6 +60,25 @@
     margin-left: -50px;
 }
 
+.priorityButton{
+    margin-left: -20px;
+}
+
+.assignTo{
+    margin-left: 23px;
+}
+
+.userDropdown{
+    margin-left: -135px;
+}
+
+.descriptionInput{
+    width: 100%;
+    min-height: 100px;
+   text-align: left;
+   overflow-wrap: break-word;
+}
+
 modal-header{
     border-bottom: black !important; 
 }

@@ -8,11 +8,11 @@ import CreateTaskModal from '../ModalComponent/CreateTaskModal/CreateTaskCompone
 export default function AdminHomePage() {
 
   function CreateTask() {
-    <CreateTaskModal/>
   }
-
+  
   return (
     <body>
+      <CreateTaskModal/>
       <div className='homePageBackground'>
 
         <Container>
@@ -20,7 +20,7 @@ export default function AdminHomePage() {
 
             <div style={{ display: 'flex', alignItems: 'center' }}>
               <div className='headerFontSize'>Task Master</div>
-              <button className='createTasksBtn'><u>Create Tasks</u></button>
+              <button className='createTasksBtn' onClick={CreateTask}><u>Create Tasks</u></button>
               <Dropdown className='userBtn'>
                 <Dropdown.Toggle style={{backgroundColor: 'transparent', border:'none', fontSize:'40px'}} id="dropdown-basic">
                   <u>Users</u>
