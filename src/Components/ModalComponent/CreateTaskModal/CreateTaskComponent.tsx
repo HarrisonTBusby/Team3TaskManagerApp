@@ -19,15 +19,18 @@ export default function CreateTaskModal(props: any) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  let userData: { Id?: number, Username?: string, isAdmin?: boolean } = {};
-  userData = JSON.parse(sessionStorage.UserData);
-
+  
   // userData.Username
-
+  
   function handleSubmit() {
+    
+    let userData: { Id?: number, username?: string, isAdmin?: boolean } = {};
+    userData = JSON.parse(sessionStorage.UserData);
+    console.log(userData);
+    let Assigner = userData.username;
+    console.log(Assigner);
 
-    let Assigner = userData.Username;
-
+    setShow(false);
     let task = {
       'Id': 0,
       'Title': title,
@@ -41,6 +44,7 @@ export default function CreateTaskModal(props: any) {
     }
 
     console.log(task);
+
     CreateTask(task);
     /*
     {
